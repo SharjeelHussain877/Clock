@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body,
+.time,
+.left-side,
+.right-side,
+.right-top,
+.right-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 80vh;
+  width: 100%;
+  background-color: rgb(42, 42, 54);
+}
+
+.digital-clock,
+.time,
+.right-side {
+  position: relative;
+}
+
+.digital-clock {
+  color: white;
+  background-color: rgb(50, 46, 40);
+  width: 50%;
+  padding: 20px 45px;
+  box-shadow: 0 5px 25px black;
+  border-radius: 10px;
+}
+
+.digital-clock::before {
+  content: "";
+  position: absolute;
+  background-size: 200% 200%;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  filter: blur(30px);
+  animation: glow 5s ease infinite;
+  background-image: linear-gradient(45deg, blue, orange, green);
+  -webkit-animation: glow 5s ease infinite;
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#hours {
+  font-weight: 600;
+  padding: 0 10px;
+  line-height: 125px;
+  font-size: 8em;
+  background: -webkit-linear-gradient(90deg, blue, white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.right-side {
+  flex-direction: column;
+}
+
+#dots {
+  font-size: 4em;
+  transform: translateY(-3px);
+  color: grey;
+}
+
+#minutes {
+  font-size: 5em;
+  font-weight: 600;
+  margin-left: 10px;
+  background: -webkit-linear-gradient(90deg, orchid, white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.right-down {
+  margin-left: 10px;
+  transform: translateY(-25px);
+}
+
+#period,
+#seconds {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+#period {
+  font-weight: bold;
+  color: orange;
+}
+
+#seconds {
+  font-weight: bold;
+  color: white;
+}
